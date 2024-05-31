@@ -1,0 +1,8 @@
+black
+isort
+jupyter
+numpy
+pandas
+pylint
+pytest
+scipy
