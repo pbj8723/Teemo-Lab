@@ -19,6 +19,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: Install dependencies
-        run: |
-          pip install .
+      - name: Install packages
+        run: python -m pip install .
+
