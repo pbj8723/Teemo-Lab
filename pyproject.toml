@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=60", "versioneer[toml]==0.29"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "teemolab"
+dynamic = ["version"]
+description = "Laboratory to analyze League of Legends"
+authors = [
+  { name = "Seoyoung Kim" },
+  { name = "Beomjun Park" },
+  { name = "Junseok Lee" },
+  { name = "Yongbeom Jeon"}
+]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+classifiers = [
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+]
+
+dependencies = [
+  "jupyter",
+  "numpy",
+  "pandas",
+  "scipy",
+  "black",
+  "isort",
+  "pytest",
+  "pylint",
+]
+
+[tool.setuptools.packages.find]
+include = ["teemolab"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.isort]
+profile = "black"
