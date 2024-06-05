@@ -18,9 +18,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
+      - run:
+          pwd
+          ls -la
       - name: Install packages
-        run: python -m pip install .
+        run: pip install .
 
       - name: Lint codes
         run: |
