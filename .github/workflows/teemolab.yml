@@ -19,8 +19,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
       - name: Install packages
-        run: pip install -r pyproject.toml
+        run: pip install .
 
       - name: Lint codes
         run: |
