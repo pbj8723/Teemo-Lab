@@ -19,7 +19,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run:
-          pwd
           ls -la
       - name: Install packages
         run: pip install .
