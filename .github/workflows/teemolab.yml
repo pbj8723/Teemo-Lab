@@ -22,7 +22,8 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.12"
+          python-version: ${{ matrix.python-version }}
+
       - name: Install packages
         run: pip install .
 
@@ -32,7 +33,5 @@ jobs:
           pylint tests/ teemolab/
           black --check tests/ teemolab/
 
-
       - name: Run tests
         run: pytest tests/
-
