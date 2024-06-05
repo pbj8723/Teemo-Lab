@@ -18,10 +18,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - run:
-          ls -la
+
       - name: Install packages
-        run: pip install .
+        run: pip install -r pyproject.toml
 
       - name: Lint codes
         run: |
