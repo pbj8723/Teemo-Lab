@@ -24,8 +24,16 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Install packages
-        run: pip install .
+      - name: Load cached venv
+        id: cached-pyproject-toml
+        uses: actions/cache@v3
+        with:
+          key: venv-${{ runner.os }}-${{ matrix.python }}-${{ hashFiles('./pyproject.toml') }}
+
+      - name: Install dependencies
+        if: steps.cached-pyproject-toml.outputs.cache-hit != 'true'
+        run: |
+          pip install .
 
       - name: Lint codes
         run: |
