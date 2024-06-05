@@ -35,7 +35,7 @@ dependencies = [
 ]
 
 [tool.setuptools.packages.find]
-where = ["teemolab"]
+include = ["teemolab"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
