@@ -18,7 +18,7 @@ This project is organized into several directories and files for efficient workf
     │
     ├── images             <- The directory for images
     │
-    ├── teemo-lab          <- Source code for use in this project.
+    ├── teemolab           <- Source code for use in this project.
     │   ├── __init__.py    <- Makes src a Python module
     │   │
     │   └── ...
@@ -29,7 +29,21 @@ This project is organized into several directories and files for efficient workf
 
 ## Setup the Environment
 
-To work with [Teemo-Lab](https://github.com/pbj8723/Teemo-Lab), you need to setup the python environment using [conda](https://docs.conda.io/en/latest/). Probably, the simplest way is to use [Docker](https://www.docker.com/). Or you can set it up manually.
+To work with [Teemo-Lab](https://github.com/pbj8723/Teemo-Lab)
+
+### Use Pip
+
+You can install the dependencies using pip.
+
+To install the dependencies, run the following command:
+
+```bash
+pip install -e .
+```
+
+### Use Conda
+
+You can install the dependencies using conda.
 
 To install the dependencies, run the following command:
 
