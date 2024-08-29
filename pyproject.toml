@@ -23,10 +23,6 @@ classifiers = [
   "Programming Language :: Python :: 3.12",
 ]
 
-packages = [
-  {include = "teemolab"},
-]
-
 dependencies = [
   "jupyter",
   "numpy",
@@ -37,6 +33,9 @@ dependencies = [
   "pytest",
   "pylint",
 ]
+
+[tool.setuptools.packages.find]
+include = ["teemolab"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
