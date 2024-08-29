@@ -1,0 +1,42 @@
+name: teemolab-tests
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  unittest:
+    name: tests on ${{ matrix.python-version }} / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: true
+      matrix:
+        os: ["ubuntu-22.04"]
+        python-version: ["3.12"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install pip and setuptools
+        run: |
+          python -m pip install --upgrade pip setuptools
+
+      - name: Install dependencies
+        run: |
+          pip install . 
+
+      - name: Lint codes
+        run: |
+          isort --check-only --diff tests/ teemolab/
+          pylint tests/ teemolab/
+          black --check tests/ teemolab/
+
+      - name: Run tests
+        run: pytest tests/
