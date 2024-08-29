@@ -2,9 +2,9 @@ from setuptools import find_packages, setup
 
 setup(
     name='Teemo-Lab',
-    packages=find_packages(include=["teemolab", "teemolab.*"]),
+    packages=find_packages(),
     version='0.1.0',
-    description='Experiment Suites for League of Legends',
+    description='Experiment Suites for Le',
     author='Beomjun Park',
     author_email='pjh8723@gmail.com',
     license='',
